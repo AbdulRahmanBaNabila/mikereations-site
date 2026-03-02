@@ -1,65 +1,102 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth bg-background text-foreground">
+      {/* PAGE 1: Starter layout */}
+      <section
+        id="top"
+        className="snap-start min-h-screen grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"
+      >
+        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+          {/* Logo (replaces NEXT.js) */}
+          <Image
+            className="dark:invert"
+            src="/logo_mikereations.png"
+            alt="Mikereations"
+            width={180}
+            height={38}
+            priority
+          />
+
+          <div className="flex flex-col gap-2 items-center sm:items-start">
+            <p className="text-2xl font-semibold">Changing the world <br></br>
+            2 lines at a time</p>
+            <p className="text-sm sm:text-base text-foreground/60 max-w-[520px]">
+              Landing pages, full-stack systems, payment integrations, and
+              secure solutions.
+            </p>
+          </div>
+
+          <div className="flex gap-4 items-center flex-col sm:flex-row">
+            {/* About: anchor to next snap section */}
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#about"
+              className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              About
+            </a>
+
+            {/* Contact: separate page */}
+            <Link
+              href="/contact"
+              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
             >
-              Learning
-            </a>{" "}
-            center.
+              Contact Us
+            </Link>
+          </div>
+        </main>
+
+        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-foreground/60 text-sm">
+          <a href="#about" className="hover:underline underline-offset-4">
+            About
+          </a>
+          <Link href="/contact" className="hover:underline underline-offset-4">
+            Requests
+          </Link>
+          <a
+            className="hover:underline underline-offset-4"
+            href="mailto:info@mikereations.com"
+          >
+            Email
+          </a>
+        </footer>
+      </section>
+
+      {/* PAGE 2: About (full screen, one scroll away) */}
+      <section
+        id="about"
+        className="snap-start min-h-screen flex items-center justify-center p-8 sm:p-20"
+      >
+        <div className="max-w-2xl w-full flex flex-col gap-4 items-center sm:items-start">
+          <h2 className="text-3xl font-semibold">About</h2>
+          <p className="text-foreground/60 leading-relaxed">
+            Dummy about text. Replace later with your positioning: fast
+            delivery, clean UX, secure engineering, and optional UAE hosting for
+            clients who need data residency.
           </p>
+
+          <div className="flex gap-4 mt-6">
+            <a
+              href="#top"
+              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            >
+              Back to top
+            </a>
+
+            <Link
+              href="/contact"
+              className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        {/* Invisible anchor target for Back to top */}
+        <div id="top" className="absolute top-0" />
+      </section>
     </div>
   );
 }
