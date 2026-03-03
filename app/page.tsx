@@ -11,21 +11,35 @@ export default function Home() {
       >
         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
           {/* Logo (replaces NEXT.js) */}
-          <Image
-            className="dark:invert"
-            src="/logo_mikereations.png"
-            alt="Mikereations"
-            width={180}
-            height={38}
-            priority
-          />
+          <div className="flex items-center gap-6">
+            <Image
+              src="/logo_mikereations.png"
+              alt="Mikereations Logo"
+              width={180}
+              height={180}
+            />
+
+            <div className="text-left">
+              <p className="text-foreground/60 text-sm tracking-wide">
+                Changing the World,
+              </p>
+              <p className="text-foreground/60 text-sm tracking-wide">
+                Two Lines at a Time
+              </p>
+            </div>
+          </div>
 
           <div className="flex flex-col gap-2 items-center sm:items-start">
-            <p className="text-2xl font-semibold">Changing the world <br></br>
-            2 lines at a time</p>
+            <p className="text-1xl md:text-2xl font-semibold tracking-tight">
+              COMPUTER MIKEREATIONS SOFTWARE DESIGNING – L.L.C
+            </p>
+            <p className="text-xl md:text-2xl font-medium text-foreground/80">
+              Secure Software Systems & Data Infrastructure Engineering
+            </p>
             <p className="text-sm sm:text-base text-foreground/60 max-w-[520px]">
-              Landing pages, full-stack systems, payment integrations, and
-              secure solutions.
+              We design and deploy secure, production-grade software systems:
+              data management platforms, custom reporting modules, and
+              full-stack applications tailored to regulated environments.
             </p>
           </div>
 
@@ -48,19 +62,8 @@ export default function Home() {
           </div>
         </main>
 
-        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-foreground/60 text-sm">
-          <a href="#about" className="hover:underline underline-offset-4">
-            About
-          </a>
-          <Link href="/contact" className="hover:underline underline-offset-4">
-            Requests
-          </Link>
-          <a
-            className="hover:underline underline-offset-4"
-            href="mailto:info@mikereations.com"
-          >
-            Email
-          </a>
+        <footer className="row-start-3 text-foreground/50 text-xs">
+          © 2026 COMPUTER MIKEREATIONS SOFTWARE DESIGNING – L.L.C – S.P.C
         </footer>
       </section>
 
@@ -72,19 +75,19 @@ export default function Home() {
         <div className="max-w-2xl w-full flex flex-col gap-4 items-center sm:items-start">
           <h2 className="text-3xl font-semibold">About</h2>
           <p className="text-foreground/60 leading-relaxed">
-            Dummy about text. Replace later with your positioning: fast
-            delivery, clean UX, secure engineering, and optional UAE hosting for
-            clients who need data residency.
+            Mikereations is a UAE-licensed software engineering firm
+            specializing in secure data systems and production-grade platforms.
+            We deliver data management systems for production pipelines,
+            veterinary and pharmaceutical clinic platforms, and custom report
+            generation tailored to client requirements. Hosting is deployed via
+            international vendors such as AWS or local UAE providers depending
+            on security and data residency needs.
           </p>
-
+          <p className="text-foreground/50 text-sm mt-4">
+            Licensed Entity: COMPUTER MIKEREATIONS SOFTWARE DESIGNING – L.L.C –
+            S.P.C · License No: CN-6364861 · Established: 2026
+          </p>
           <div className="flex gap-4 mt-6">
-            <a
-              href="#top"
-              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            >
-              Back to top
-            </a>
-
             <Link
               href="/contact"
               className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
